@@ -1,0 +1,22 @@
+{
+    "name": "spacex_scanner",
+    "version": "1.0.0",
+    "description": "A project to track all the past and future flights of SpaceX",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "server": "nodemon server.js"
+    },
+    "author": "Nikolaos Nikolaou",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "express-graphql": "^0.9.0",
+        "graphql": "^14.4.2"
+    },
+    "devDependencies": {
+        "nodemon": "^1.19.1"
+    }
+}
