@@ -4,9 +4,14 @@ body {
     padding: 0;
     min-width: 100%;
     min-height: 100vh;
-    background: #000;
+    background-color: #000;
+    background-image: url('images/mars.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
     color: #f7f7f7;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-family: "Audiowide", cursive;
 }
 
