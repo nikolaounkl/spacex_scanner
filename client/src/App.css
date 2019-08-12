@@ -5,16 +5,261 @@ body {
     min-width: 100%;
     min-height: 100vh;
     background-color: #000;
-    background-image: url('images/mars.jpg');
+    background: url("images/mars.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
     color: #f7f7f7;
-    /* overflow: hidden; */
     font-family: "Audiowide", cursive;
+    font-size: 14px;
+}
+
+* {
+    font-family: "Audiowide", cursive !important;
 }
 
 .x {
     color: cadetblue;
+}
+
+p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.link:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+#about-container,
+#launch-container,
+#notfound-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#launches-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: calc(100vh - 40px);
+    padding: 20px 0px;
+}
+
+#notfound-container span {
+    color: cadetblue;
+}
+
+.search-bar {
+    margin-top: 60px;
+    justify-content: center !important;
+}
+
+.button.is-primary {
+    background-color: cadetblue !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+    border-color: cadetblue !important;
+}
+
+.label {
+    color: #fff;
+    font-size: 10px;
+}
+
+.label.transparent {
+    opacity: 0 !important;
+}
+
+.select select:focus {
+    border-color: cadetblue !important;
+}
+
+.select select option:hover {
+    background: orange !important;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.menu {
+    margin: 10px 0;
+}
+
+.text {
+    color: cadetblue;
+    text-decoration: none;
+    font-size: 12px;
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.box {
+    border: 1px solid cadetblue;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 5px #fff;
+    color: #fff;
+}
+
+hr {
+    margin: 10px 0;
+}
+#launches-container img {
+    margin-bottom: 10px;
+}
+
+#launches-container .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#launches-container .box:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#about-container .box,
+#launch-container .box {
+    max-width: 480px;
+}
+
+.loading {
+    color: cadetblue;
+    position: fixed;
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+    min-width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading i {
+    text-shadow: 0 0 5px #fff;
+}
+
+.menu-nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 10px;
+}
+
+#brand-logo {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.menu-nav-link {
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-nav-link:hover {
+    color: cadetblue;
+}
+
+.menu-nav-link i {
+    margin-right: 5px;
+}
+
+.details-link {
+    font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.details-link i {
+    color: #fff !important;
+}
+
+.active {
+    color: cadetblue;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 10px;
+}
+
+.image {
+    max-width: 300px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+    max-width: 640px;
+    max-height: 360px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    background: #000;
+}
+
+/* ========================== */
+/* ======= Scrollbar ======== */
+/* ========================== */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 10px 40px #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: cadetblue;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #409194;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #409194;
 }

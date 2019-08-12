@@ -25,22 +25,29 @@ const LaunchType = new GraphQLObjectType({
     })
 });
 
-// Rocket Type
-const RocketType = new GraphQLObjectType({
-    name: "Rocket",
-    fields: () => ({
-        rocket_id: { type: GraphQLString },
-        rocket_name: { type: GraphQLString },
-        rocket_type: { type: GraphQLString }
-    })
-});
-
 // Link Type
 const LinkType = new GraphQLObjectType({
     name: "Link",
     fields: () => ({
         mission_patch: { type: GraphQLString },
-        video_link: { type: GraphQLString }
+        video_link: { type: GraphQLString },
+        youtube_id: { type: GraphQLString }
+    })
+});
+
+// Rocket Type
+const RocketType = new GraphQLObjectType({
+    name: "Rocket",
+    fields: () => ({
+        id: { type: GraphQLInt },
+        rocket_id: { type: GraphQLString },
+        rocket_name: { type: GraphQLString },
+        rocket_type: { type: GraphQLString },
+        description: { type: GraphQLString },
+        active: { type: GraphQLBoolean },
+        cost_per_launch: { type: GraphQLString },
+        success_rate_pct: { type: GraphQLString },
+        first_flight: { type: GraphQLString }
     })
 });
 
@@ -55,7 +62,18 @@ const InfoType = new GraphQLObjectType({
         ceo: { type: GraphQLString },
         cto: { type: GraphQLString },
         coo: { type: GraphQLString },
-        valuation: { type: GraphQLString }
+        valuation: { type: GraphQLString },
+        headquarters: { type: HeadquartersType }
+    })
+});
+
+// Link Type
+const HeadquartersType = new GraphQLObjectType({
+    name: "Headquarters",
+    fields: () => ({
+        address: { type: GraphQLString },
+        city: { type: GraphQLString },
+        state: { type: GraphQLString }
     })
 });
 
@@ -107,9 +125,6 @@ const RootQuery = new GraphQLObjectType({
         },
         info: {
             type: InfoType,
-            args: {
-                id: { type: GraphQLInt }
-            },
             resolve(parent, args) {
                 return axios
                     .get(`https://api.spacexdata.com/v3/info`)
