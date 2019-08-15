@@ -110,16 +110,14 @@ class LaunchDetails extends Component {
                                                 {rocket_type}
                                             </p>
                                         </div>
-                                        {mission_patch && (
-                                            <div className="patch">
-                                                <img
-                                                    src={mission_patch}
-                                                    width="100"
-                                                    height="100"
-                                                    alt=""
-                                                />
-                                            </div>
-                                        )}
+                                        <div className="patch">
+                                            <img
+                                                src={mission_patch ? mission_patch : "../images/spacex.png"}
+                                                width="100"
+                                                height="100"
+                                                alt=""
+                                            />
+                                        </div>
                                     </div>
                                     <hr />
                                     <p>{details}</p>

@@ -2,9 +2,8 @@ import React from "react";
 import { Query } from "react-apollo";
 import { LAUNCHES_QUERY } from "../queries/queries";
 import Launch from "./Launch";
-import SearchBar from "./SearchBar";
 
-const Launches = () => {
+const Launches = (props) => {
     return (
         <>
             <Query query={LAUNCHES_QUERY}>
@@ -12,15 +11,14 @@ const Launches = () => {
                     if (loading)
                         return <span className="loading">Connecting...</span>;
                     if (error) console.log(error);
-                    // const launchesResult = data.launches.filter(
-                    //     launch => launch.upcoming === true
-                    // );
+                    const launchesResult = data.launches.filter(
+                        launch => launch.launch_success === true
+                    );
 
                     return (
                         <>
-                            <SearchBar />
                             <div id="launches-container">
-                                {data.launches.map(launch => (
+                                {launchesResult.map(launch => (
                                     <Launch
                                         key={launch.flight_number}
                                         launch={launch}

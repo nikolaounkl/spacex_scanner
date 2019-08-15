@@ -7,14 +7,12 @@ const Launch = ({
     return (
         <Link to={`/launch/${flight_number}`} className="details-link">
             <div className="box">
-                {links.mission_patch && (
-                    <img
-                        src={links.mission_patch}
-                        alt=""
-                        width="40"
-                        height="40"
-                    />
-                )}
+                <img
+                    src={links.mission_patch ? links.mission_patch : "../images/spacex.png"}
+                    alt=""
+                    width="40"
+                    height="40"
+                />
                 <p>{mission_name}</p>
             </div>
         </Link>
