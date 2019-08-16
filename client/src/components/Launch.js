@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Launch = ({
-    launch: { flight_number, mission_name, launch_success, upcoming, links }
+    launch: { flight_number, mission_name, links }
 }) => {
     return (
         <Link to={`/launch/${flight_number}`} className="details-link">

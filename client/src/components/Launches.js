@@ -3,7 +3,7 @@ import { Query } from "react-apollo";
 import { LAUNCHES_QUERY } from "../queries/queries";
 import Launch from "./Launch";
 
-const Launches = (props) => {
+const Launches = () => {
     return (
         <>
             <Query query={LAUNCHES_QUERY}>
@@ -11,21 +11,19 @@ const Launches = (props) => {
                     if (loading)
                         return <span className="loading">Connecting...</span>;
                     if (error) console.log(error);
-                    const launchesResult = data.launches.filter(
-                        launch => launch.launch_success === true
-                    );
+                    // const launchesResult = data.launches.filter(
+                    //     launch => launch.launch_success === true
+                    // );
 
                     return (
-                        <>
-                            <div id="launches-container">
-                                {launchesResult.map(launch => (
-                                    <Launch
-                                        key={launch.flight_number}
-                                        launch={launch}
-                                    />
-                                ))}
-                            </div>
-                        </>
+                        <div id="launches-container">
+                            {data.launches.map(launch => (
+                                <Launch
+                                    key={launch.flight_number}
+                                    launch={launch}
+                                />
+                            ))}
+                        </div>
                     );
                 }}
             </Query>

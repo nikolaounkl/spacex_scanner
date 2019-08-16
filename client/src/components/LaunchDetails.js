@@ -151,7 +151,7 @@ class LaunchDetails extends Component {
                                                                 .modalActive
                                                                 ? "https://www.youtube.com/embed/" +
                                                                   youtube_id +
-                                                                  "?autoplay=1&rel=0&controls=0"
+                                                                  "?autoplay=1&rel=0"
                                                                 : ""
                                                         }
                                                         className="has-ratio"
